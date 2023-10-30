@@ -22,6 +22,7 @@ public abstract class BaseSQLApp {
         Configuration conf = new Configuration();
         conf.setInteger("rest.port", port);
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(conf);
+        /*
         env.setParallelism(parallelism);
         // 1. 设置状态后端
         env.setStateBackend(new HashMapStateBackend());
@@ -40,6 +41,7 @@ public abstract class BaseSQLApp {
         env.getCheckpointConfig().setCheckpointTimeout(10000);
         // 8. job 取消的时候的, checkpoint 保留策略
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
+         */
 
         StreamTableEnvironment tEnv = StreamTableEnvironment.create(env);
 

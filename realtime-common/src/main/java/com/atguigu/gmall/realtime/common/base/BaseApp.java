@@ -26,6 +26,7 @@ public abstract class BaseApp {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(conf);
 
         // 1.3 设置并行度
+        /*
         env.setParallelism(parallelism);
 
         // 1.4 状态后端及检查点相关配置
@@ -46,6 +47,7 @@ public abstract class BaseApp {
         env.getCheckpointConfig().setCheckpointTimeout(10000);
         // 1.4.8 job 取消时 checkpoint 保留策略
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
+        */
 
         // 1.5 从 Kafka 目标主题读取数据，封装为流
         KafkaSource<String> source = FlinkSourceUtil.getKafkaSource(ckAndGroupId, topic);
